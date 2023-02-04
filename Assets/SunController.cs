@@ -89,8 +89,8 @@ public class SunController : MonoBehaviour
             }
             else
             {
-                skyMaterial.SetColor(_skyColorID, Color.Lerp(highnoonSkyColor, endtSkyColor, (currentTime / totalTime)));
-                skyMaterial.SetColor(_HorizonColorID, Color.Lerp(highnoonHorizonColor, endtHorizonColor, (currentTime / totalTime)));
+                skyMaterial.SetColor(_skyColorID, Color.Lerp(highnoonSkyColor, endtSkyColor, ((currentTime - (totalTime / 2)) / (totalTime / 2))));
+                skyMaterial.SetColor(_HorizonColorID, Color.Lerp(highnoonHorizonColor, endtHorizonColor, ((currentTime - (totalTime / 2)) / (totalTime / 2))));
                 yield return null;
             }
             
