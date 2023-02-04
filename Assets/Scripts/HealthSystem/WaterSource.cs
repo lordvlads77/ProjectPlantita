@@ -38,8 +38,6 @@ namespace Platforms
             var drainPower = (totalHeal - _healingWater.GetLeftHealPoints().Value);
             
             _skyMaterial.SetFloat(_drainPowerID, drainPower);
-            
-            Debug.Log(drainPower);
         }
     }
 }
