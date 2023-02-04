@@ -23,6 +23,8 @@ public class CharacterLife : MonoBehaviour, IHealthEvents
 
     public void Death()
     {
+        Health.Damage(new LifePoint(1));
+        
         throw new NotImplementedException();
     }
 }

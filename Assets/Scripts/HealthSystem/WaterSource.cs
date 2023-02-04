@@ -5,7 +5,7 @@ using UnityEngine.Serialization;
 
 namespace Platforms
 {
-    public class WaterPlatform : MonoBehaviour
+    public class WaterSource : MonoBehaviour
     {
         [FormerlySerializedAs("HealingFactor")] 
         public int healingFactor;
