@@ -419,7 +419,6 @@ GameObject:
   - component: {fileID: 4012291302952920}
   - component: {fileID: 114112746293133540}
   - component: {fileID: 114090585617294424}
-  - component: {fileID: 81087111936346350}
   m_Layer: 0
   m_Name: CameraRoot
   m_TagString: Untagged
@@ -477,11 +476,3 @@ MonoBehaviour:
   smoothSpeed: 15
   extrapolateRotation: 0
   updateType: 1
---- !u!81 &81087111936346350
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1871759347135580}
-  m_Enabled: 1
