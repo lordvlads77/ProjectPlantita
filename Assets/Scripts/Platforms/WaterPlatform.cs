@@ -1,28 +1,28 @@
-using System;
-using Unity.VisualScripting;
+using HealthSystem;
 using UnityEngine;
 
 namespace Platforms
 {
     public class WaterPlatform : MonoBehaviour
     {
-        public LifePoint HealingFactor { get; set; }
+        public int HealingFactor { get; set; }
+        public int TotalHeal { get; set; }
         public float HealingSpeed { get; set; }
 
-        private IHealth _target;
-        private float _nextHealing = 0;
+        private HealingWater _healingWater;
 
-        public void OnTriggerEnter2D(Collider2D col)
+        private void Awake()
         {
-            _nextHealing = Time.deltaTime + HealingSpeed;
-            _target = col.GetComponent<IHealth>();
+            var healingFactor = new LifePoint(HealingFactor);
+            var totalHeal = new LifePoint(TotalHeal);
+            
+            _healingWater = new HealingWater(healingFactor, totalHeal, HealingSpeed);
         }
 
-        public void OnTriggerStay(Collider other)
+        public void OnTriggerStay2D(Collider2D col)
         {
-            if(Time.deltaTime < _nextHealing) return;
-
-            _target.Heal(HealingFactor);
+            var target = col.GetComponent<CharacterLife>();
+            _healingWater.Heal(target.Health, Time.deltaTime);
         }
     }
 }

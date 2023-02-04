@@ -20,7 +20,7 @@ namespace HealthSystem
         
         public LifePoint Hurt(LifePoint damage)
         {
-            CurrentLife = new LifePoint(CurrentLife.Value - damage.Value);
+            CurrentLife.ChangeValue(CurrentLife.Value - damage.Value);
             
             DeathEvent();
             
@@ -36,7 +36,7 @@ namespace HealthSystem
 
         public LifePoint Heal(LifePoint heal)
         {
-            CurrentLife = new LifePoint(CurrentLife.Value + heal.Value);
+            CurrentLife.ChangeValue(CurrentLife.Value + heal.Value);
 
             if (CurrentLife.Value > MaxLife.Value) CurrentLife = new LifePoint(InitialLife);
             
