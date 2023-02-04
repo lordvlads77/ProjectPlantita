@@ -15,7 +15,7 @@ namespace HealthSystem
         
         public LifePoint CurrentLife { get; private set; }
         
-        public LifePoint Reduce(LifePoint damage)
+        public LifePoint Hurt(LifePoint damage)
         {
             CurrentLife = new LifePoint(CurrentLife.Value - damage.Value);
             
