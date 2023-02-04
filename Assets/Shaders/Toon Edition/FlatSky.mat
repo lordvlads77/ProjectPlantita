@@ -48,7 +48,7 @@ Material:
     m_Colors:
     - _AstroColor: {r: 1011.95294, g: 1024, b: 0, a: 1}
     - _HorizonColor: {r: 0.56078434, g: 0.86666673, b: 1, a: 1}
-    - _PosAstro: {r: 0.001194539, g: 1.2010698, b: -5, a: 0}
+    - _PosAstro: {r: 0.0010501337, g: 1.2009405, b: -5, a: 0}
     - _PosAstroMask: {r: -1, g: -1, b: 0, a: 0}
     - _SkyColor: {r: 0.7607844, g: 0.79215693, b: 0.16078432, a: 1}
   m_BuildTextureStacks: []
