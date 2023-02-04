@@ -41,14 +41,14 @@ Material:
     - Vector1_eb75f2ced8454936bde4ddaad9cb4d4f: 15.8
     - _AstroMaskSize: 0
     - _AstroSize: 0.258
-    - _ClodHeigh: 0.127
+    - _ClodHeigh: 0.16
     - _QueueControl: 0
     - _QueueOffset: 0
     - _WindSpeed: 0.94
     m_Colors:
     - _AstroColor: {r: 1011.95294, g: 1024, b: 0, a: 1}
     - _HorizonColor: {r: 0.56078434, g: 0.86666673, b: 1, a: 1}
-    - _PosAstro: {r: 0.000016932487, g: 1.21, b: -5, a: 0}
+    - _PosAstro: {r: 0.0003127718, g: 1.2002802, b: -5, a: 0}
     - _PosAstroMask: {r: -1, g: -1, b: 0, a: 0}
     - _SkyColor: {r: 0.7607844, g: 0.79215693, b: 0.16078432, a: 1}
   m_BuildTextureStacks: []
