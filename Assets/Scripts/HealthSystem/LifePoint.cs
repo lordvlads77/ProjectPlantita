@@ -6,4 +6,10 @@ public record LifePoint
     {
         Value = initialLife < 0 ? 0 : initialLife;
     }
+
+    public LifePoint(LifePoint initialLife)
+    {
+
+        Value = initialLife.Value;
+    }
 }
