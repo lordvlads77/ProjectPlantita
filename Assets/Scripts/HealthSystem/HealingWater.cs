@@ -27,7 +27,7 @@ namespace HealthSystem
 
         private bool CanHeal(float currentTime)
         {
-            return (_nextHealing <= currentTime && _healPoints.Value > 0);
+            return _nextHealing <= currentTime && _healPoints.Value > 0;
         }
 
         public LifePoint GetLeftHealPoints()
