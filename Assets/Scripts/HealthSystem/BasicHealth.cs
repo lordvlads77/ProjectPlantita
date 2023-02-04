@@ -1,10 +1,10 @@
 namespace HealthSystem
 {
-    public class Health : IHealth
+    public class BasicHealth : IHealth
     {
         private readonly IHealthEvents _healthEvents;
 
-        public Health(LifePoint initialLife, IHealthEvents healthEvents)
+        public BasicHealth(LifePoint initialLife, IHealthEvents healthEvents)
         {
             _healthEvents = healthEvents;
             InitialLife = initialLife;
