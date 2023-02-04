@@ -33,8 +33,6 @@ namespace Platforms
             if(target == null) return;
             
             _healingWater.Heal(target.Health, Time.time);
-            
-            Debug.Log((target.Health.GetCurrentLife()));
         }
     }
 }
