@@ -40,8 +40,9 @@ public class WindController : MonoBehaviour
             yield return null;
         }
         //Aqui se llaman los eventos de el viento
-
+        GameManager.Instance.ItsWindy = true;
         yield return new WaitForSeconds(windDuration);
+        GameManager.Instance.ItsWindy = false;
         counter = 0;
         while (counter < windStopDelay)
         {
@@ -56,7 +57,7 @@ public class WindController : MonoBehaviour
         {
             WindMaterials[i].SetFloat(_WindStrenghtID, 0);
         }
-
+        
         cWindCicle = null;
     }
 }

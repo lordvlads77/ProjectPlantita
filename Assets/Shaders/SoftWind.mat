@@ -43,7 +43,7 @@ Material:
     - _VerticalInfluence: 42.47
     - _WindAmmount: 15.3
     - _WindSpeed: 2
-    - _WindStrength: 0
+    - _WindStrength: 5.0048685
     m_Colors:
     - _WindDirection: {r: 1, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []

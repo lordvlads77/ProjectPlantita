@@ -70,11 +70,13 @@ public class SunController : MonoBehaviour
             if(dayPercent >= firstDayEventTrigger && !firstEventTriggered)
             {
                 print("Empieza a quemar");
+                GameManager.Instance.ItsSunny = true;
                 firstEventTriggered = true;
                 OnFirstFlag?.Invoke();
             }
             if (dayPercent >= secondDayEventTrigger && !secondEventTriggered)
             {
+                GameManager.Instance.ItsSunny = false;
                 print("Dejo de quemar");
                 secondEventTriggered = true;
                 OnSecondFlag?.Invoke();

@@ -24,7 +24,7 @@ namespace CMF
 			}
 			else
 			{
-				print("BBB");
+				//print("BBB");
 				//If a camera transform has been assigned, use the assigned transform's 'right' axis for movement direction;
 				//Project movement direction so movement stays parallel to the ground;
 				_velocity += Vector3.ProjectOnPlane(cameraTransform.right, tr.up).normalized * characterInput.GetHorizontalMovementInput();
