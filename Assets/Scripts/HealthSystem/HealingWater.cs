@@ -6,28 +6,28 @@ namespace HealthSystem
         private float _nextHealing = 0;
         
         private readonly LifePoint _healingFactor;
-        private readonly LifePoint _totalHeal;
+        private readonly LifePoint _healPoints;
 
-        public HealingWater(LifePoint healingFactor, LifePoint totalHeal, float healingSpeed)
+        public HealingWater(LifePoint healingFactor, LifePoint healPoints, float healingSpeed)
         {
             _healingFactor = healingFactor;
-            _totalHeal = totalHeal;
+            _healPoints = healPoints;
             _healingSpeed = healingSpeed;
         }
         
         public void Heal(IHealth health, float currentTime)
         {
-            if(CanHeal(currentTime)) return;
+            if(!CanHeal(currentTime)) return;
             
             health.Heal(_healingFactor);
             
             _nextHealing = currentTime + _healingSpeed;
-            _totalHeal.ChangeValue(_totalHeal.Value - _healingFactor.Value);
+            _healPoints.ChangeValue(_healPoints.Value - _healingFactor.Value);
         }
 
         private bool CanHeal(float currentTime)
         {
-            return _nextHealing > currentTime || _totalHeal.Value <= 0;
+            return (_nextHealing <= currentTime || _healPoints.Value > 0);
         }
     }
 }

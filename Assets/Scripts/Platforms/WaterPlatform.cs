@@ -1,28 +1,40 @@
+using System;
 using HealthSystem;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Platforms
 {
     public class WaterPlatform : MonoBehaviour
     {
-        public int HealingFactor { get; set; }
-        public int TotalHeal { get; set; }
-        public float HealingSpeed { get; set; }
+        [FormerlySerializedAs("HealingFactor")] 
+        public int healingFactor;
+        
+        [FormerlySerializedAs("TotalHeal")] 
+        public int totalHeal;
+        
+        [FormerlySerializedAs("HealingSpeed")] 
+        public float healingSpeed;
 
         private HealingWater _healingWater;
 
         private void Awake()
         {
-            var healingFactor = new LifePoint(HealingFactor);
-            var totalHeal = new LifePoint(TotalHeal);
+            var healing = new LifePoint(healingFactor);
+            var healPoints = new LifePoint(totalHeal);
             
-            _healingWater = new HealingWater(healingFactor, totalHeal, HealingSpeed);
+            _healingWater = new HealingWater(healing, healPoints, healingSpeed);
         }
-
-        public void OnTriggerStay2D(Collider2D col)
+        
+        private void OnTriggerStay2D(Collider2D other)
         {
-            var target = col.GetComponent<CharacterLife>();
-            _healingWater.Heal(target.Health, Time.deltaTime);
+            var target = other.GetComponent<CharacterLife>();
+            
+            if(target == null) return;
+            
+            _healingWater.Heal(target.Health, Time.time);
+            
+            Debug.Log((target.Health.GetCurrentLife()));
         }
     }
 }

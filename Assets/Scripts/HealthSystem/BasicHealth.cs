@@ -38,8 +38,13 @@ namespace HealthSystem
         {
             CurrentLife.ChangeValue(CurrentLife.Value + heal.Value);
 
-            if (CurrentLife.Value > MaxLife.Value) CurrentLife = new LifePoint(InitialLife);
+            if (CurrentLife.Value >= MaxLife.Value) CurrentLife.ChangeValue(MaxLife.Value);
             
+            return CurrentLife;
+        }
+
+        public LifePoint GetCurrentLife()
+        {
             return CurrentLife;
         }
     }
