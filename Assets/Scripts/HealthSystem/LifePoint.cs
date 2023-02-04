@@ -4,6 +4,6 @@ public record LifePoint
 
     public LifePoint(int initialLife)
     {
-        Value = initialLife <= 0 ? 1 : initialLife;
+        Value = initialLife < 0 ? 0 : initialLife;
     }
 }
