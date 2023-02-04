@@ -29,5 +29,10 @@ namespace HealthSystem
         {
             return (_nextHealing <= currentTime && _healPoints.Value > 0);
         }
+
+        public LifePoint GetLeftHealPoints()
+        {
+            return _healPoints;
+        }
     }
 }
