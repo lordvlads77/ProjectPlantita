@@ -4,6 +4,7 @@ using System.Collections;
 using UnityEngine.Events;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
+using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     [SerializeField]private bool _itsWindy;
@@ -20,6 +21,7 @@ public class GameManager : MonoBehaviour
     float contador;
     public int sunDamage;
     [SerializeField] private Transform sunRayOrigin;
+    public Slider reloj;
 
     public BlowAwayPlayer windConditioner;
     public Volume globalVolume;

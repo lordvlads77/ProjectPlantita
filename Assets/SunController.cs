@@ -65,6 +65,7 @@ public class SunController : MonoBehaviour
         {
             currentTime += Time.deltaTime;
             dayPercent = currentTime / totalTime;
+            GameManager.Instance.reloj.value = dayPercent;
             if (!anocheciendo && currentTime > (totalTime / 2))
                 anocheciendo = true;
             if(dayPercent >= firstDayEventTrigger && !firstEventTriggered)
