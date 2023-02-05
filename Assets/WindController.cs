@@ -17,7 +17,7 @@ public class WindController : MonoBehaviour
     void Start()
     {
         _WindStrenghtID = Shader.PropertyToID("_WindStrength");
-        windParticles = GameObject.Find("WindController").GetComponent<ParticleSystem>();
+        windParticles = GameObject.Find("WindDust").GetComponent<ParticleSystem>();
     }
 
     void OnTriggerEnter2D(Collider2D col)

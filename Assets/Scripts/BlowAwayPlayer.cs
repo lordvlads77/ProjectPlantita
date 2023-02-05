@@ -6,9 +6,10 @@ public class BlowAwayPlayer : MonoBehaviour
 {
     public CMF.SidescrollerController _sc;
     public CMF.Mover _mover;
-    [SerializeField]Rigidbody2D rb;
+    [SerializeField] Rigidbody2D rb;
     [SerializeField] private Collider2D col;
     public GameObject _camara;
+    public GameObject _particles;
     public float rotationSpeed = 10;
     bool fliying;
     public bool asalvo;
@@ -49,23 +50,25 @@ public class BlowAwayPlayer : MonoBehaviour
     public void BumpPlayer()
     {
         _camara.transform.parent = null;
+        _particles.transform.parent = null;
         _sc.enabled = false;
         _mover.enabled = false;
         col.enabled = false;
         rb.AddForce(new Vector2(Random.Range(-1,1), 1) * 1000);
         fliying = true;
-        Invoke(nameof(CallGameOver), 1);
+        Invoke(nameof(CallGameOver), 2);
     }
 
     public void FlyPlayer()
     {
         _camara.transform.parent = null;
+        _particles.transform.parent = null;
         _sc.enabled = false;
         _mover.enabled = false;
         col.enabled = false;
         rb.AddForce(new Vector2(-1,1) * 700);
         fliying = true;
-        Invoke(nameof(CallGameOver), 1);
+        Invoke(nameof(CallGameOver), 2);
     }
 
     void CallGameOver()
