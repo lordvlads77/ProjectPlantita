@@ -101,7 +101,7 @@ public class SunController : MonoBehaviour
             }
             
         }
-
+        GameManager.Instance.GameOver = true;
         cHighNoon = null;
     }
 }

@@ -107,7 +107,7 @@ namespace CMF
 			if(isInDebugMode)
 				sensor.DrawDebug();
 			anim.SetBool("grounded", isGrounded);
-			if(Input.GetKeyDown(KeyCode.Space))
+			if(Input.GetKeyDown(KeyCode.Space) && !GameManager.Instance.GameOver && !GameManager.Instance.Winner)
 				anim.SetTrigger("jump");
 		}
 
