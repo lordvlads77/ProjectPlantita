@@ -47,11 +47,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   WindMaterials:
   - {fileID: 2100000, guid: a544743596ea84f43a834b9a619ce725, type: 2}
-  windStrength: 5
+  - {fileID: 2100000, guid: 59edcbed2d45ec54399c23e6c7c15205, type: 2}
+  windStrength: 1
   windStartDelay: 4
   windStopDelay: 3
   windDuration: 5
   windParticles: {fileID: 0}
+  windSound: {fileID: 8300000, guid: ec7ecc7151e67e14cb38d2166c058c8a, type: 3}
 --- !u!61 &2727018819296697374
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -12,6 +12,7 @@ public class WindController : MonoBehaviour
     [SerializeField]private float windDuration;
     Coroutine cWindCicle;
     [SerializeField]private ParticleSystem windParticles;
+    public AudioClip windSound;
 
     // Start is called before the first frame update
     void Start()
@@ -35,6 +36,7 @@ public class WindController : MonoBehaviour
         main.startDelay = windStartDelay / 2;
         main.duration = windDuration + windStopDelay;
         windParticles.Play();
+        GameManager.Instance.fxAudio.PlayOneShot(windSound);
         while (counter < windStartDelay )
         {
             counter += Time.deltaTime;

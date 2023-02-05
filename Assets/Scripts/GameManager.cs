@@ -30,6 +30,7 @@ public class GameManager : MonoBehaviour
     public AudioClip sonidoMoricion;
     public AudioSource playerAudio;
     public AudioSource musicAudio;
+    public AudioSource fxAudio;
     private void Start() {
         Application.targetFrameRate = 60;
         VolumeProfile profile = globalVolume.sharedProfile;
@@ -166,17 +167,6 @@ public class GameManager : MonoBehaviour
                     }
                 }
             }
-
-            if(ItsWindy)
-            {
-                if(!windConditioner.asalvo && !GameOver)
-                {
-                    GameOver = false;
-                    windConditioner.FlyPlayer();
-                }
-
-            }
         }
-        
     }
 }

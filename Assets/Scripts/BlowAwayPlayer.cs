@@ -21,6 +21,10 @@ public class BlowAwayPlayer : MonoBehaviour
         }
         if(fliying)
             rb.rotation += Time.deltaTime * rotationSpeed;
+        if(GameManager.Instance.ItsWindy && !asalvo)
+        {
+            FlyPlayer();
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
