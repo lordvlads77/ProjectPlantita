@@ -34,7 +34,7 @@ public class CharacterLife : MonoBehaviour, IHealthEvents
         var lifePoint = new LifePoint(maxLife);
 
 
-        if (_isHealthBarNull)
+        if (!_isHealthBarNull)
         {
             healthBar.maxValue = maxLife;
             healthBar.value = initialLife;
@@ -47,22 +47,23 @@ public class CharacterLife : MonoBehaviour, IHealthEvents
 
     public void Death()
     {
-        if (_dyingHashAnimation < 0) return;
+        UpdateHealthBar();
 
-        _animator.Play(_dyingHashAnimation);
+        if (_dyingHashAnimation > 0)
+            _animator.Play(_dyingHashAnimation);
 
         if (_isGameManagerNotNull)
             gameManager.GameOver = true;
 
-        UpdateHealthBar();
     }
 
     public void Hurt()
     {
+        UpdateHealthBar();
+        
         if (!_isHurtEffectsNotNull || hurtEffects.isPlaying) return;
 
         hurtEffects.Play();
-        UpdateHealthBar();
     }
 
     public void Healing()
