@@ -40,7 +40,7 @@ Material:
     m_Floats:
     - _CellDensity: 5
     - _Pixelization: 43.89
-    - _VerticalInfluence: 42.47
+    - _VerticalInfluence: 0.9
     - _WindAmmount: 15.3
     - _WindSpeed: 2
     - _WindStrength: 5.0048685
