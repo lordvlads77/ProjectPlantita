@@ -155,13 +155,11 @@ public class GameManager : MonoBehaviour
         {
             if (ItsSunny)
             {
+                contador += Time.deltaTime;
                 if (contador >= damageTickDelay)
                  {
-                    contador += Time.deltaTime;
-            
                     contador = 0;
                     RaycastHit2D hit = Physics2D.Linecast(sunRayOrigin.position, PlayerPos.position);
-
                     if (hit.collider != null && hit.collider.transform.CompareTag("Player"))
                     {
                         playerLife.Health.Damage(new LifePoint(sunDamage));
