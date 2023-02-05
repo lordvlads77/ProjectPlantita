@@ -60,7 +60,7 @@ public class BlowAwayPlayer : MonoBehaviour
         col.enabled = false;
         rb.AddForce(new Vector2(Random.Range(-1,1), 1) * 1000);
         fliying = true;
-        Invoke(nameof(CallGameOver), 2);
+        Invoke(nameof(CallGameOver), 1);
     }
 
     public void FlyPlayer()
@@ -72,7 +72,7 @@ public class BlowAwayPlayer : MonoBehaviour
         col.enabled = false;
         rb.AddForce(new Vector2(-1,1) * 700);
         fliying = true;
-        Invoke(nameof(CallGameOver), 2);
+        Invoke(nameof(CallGameOver), 1);
     }
 
     void CallGameOver()
