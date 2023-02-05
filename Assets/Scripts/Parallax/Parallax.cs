@@ -25,10 +25,6 @@ public class Parallax : MonoBehaviour
         {
             var deltaX = (position.x - _previousCameraPosition.x) * background.speed;
             
-            Debug.Log("position.x" + position.x);
-            Debug.Log(_previousCameraPosition.x);
-            Debug.Log("background.x" + background.speed);
-            
             background.transform.Translate(new Vector3(deltaX, 0));
             var moveAmount = position.x * (1 - background.speed);
             
