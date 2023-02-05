@@ -70,22 +70,20 @@ namespace Platforms
             
             transform.Translate( direction * (speed * Time.deltaTime));
         }
-        private void OnCollisionEnter2D(Collision2D other)
+        
+        private void OnTriggerEnter2D(Collider2D other)
         {
-            if (other.gameObject.GetComponent<CharacterLife>() == null ||
-                other.gameObject.GetComponent<CharacterKeyboardInput>().IsJumpKeyPressed() && 
-                other.gameObject.GetComponent<CharacterController>().isGround) return;
+            if (other.gameObject.GetComponent<CharacterLife>() == null && _player == null) return;
             
             AttachPlayer(other.transform);
         }
-
-        private void OnCollisionExit2D(Collision2D other)
+        
+        private void OnTriggerExit2D(Collider2D other)
         {
-            if(other.gameObject.GetComponent<CharacterLife>().GetInstanceID() != _player.GetInstanceID()) return;
+            if(_player != null && other.gameObject.GetComponent<CharacterLife>().GetInstanceID() != _player.GetInstanceID()) return;
             
             DetachPlayer();
         }
-
         public void AttachPlayer(Transform player)
         {
             player.transform.parent = transform;
