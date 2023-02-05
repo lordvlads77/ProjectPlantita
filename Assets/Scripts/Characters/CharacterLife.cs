@@ -10,18 +10,21 @@ public class CharacterLife : MonoBehaviour, IHealthEvents
     public string dyingAnimation;
     public ParticleSystem hurtEffects;
 
-    public Slider HealthBar;
-    
+    public Slider healthBar;
+    public GameManager gameManager;
+
     private int _dyingHashAnimation;
     private Animator _animator;
     private bool _isHurtEffectsNotNull;
     private bool _isHealthBarNull;
+    private bool _isGameManagerNotNull;
 
     public IHealth Health { get; private set; }
 
     private void Start()
     {
-        _isHealthBarNull = HealthBar == null;
+        _isGameManagerNotNull = gameManager != null;
+        _isHealthBarNull = healthBar == null;
         _isHurtEffectsNotNull = hurtEffects != null;
     }
 
@@ -30,8 +33,13 @@ public class CharacterLife : MonoBehaviour, IHealthEvents
         var life = new LifePoint(initialLife);
         var lifePoint = new LifePoint(maxLife);
 
-        HealthBar.maxValue = maxLife;
-        HealthBar.value = initialLife;
+
+        if (_isHealthBarNull)
+        {
+            healthBar.maxValue = maxLife;
+            healthBar.value = initialLife;
+        }
+
         _animator = gameObject.GetComponent<Animator>();
         _dyingHashAnimation = Animator.StringToHash(dyingAnimation);
         Health = new BasicHealth(life, lifePoint, this);
@@ -39,16 +47,20 @@ public class CharacterLife : MonoBehaviour, IHealthEvents
 
     public void Death()
     {
-        if(_dyingHashAnimation < 0) return;
+        if (_dyingHashAnimation < 0) return;
 
         _animator.Play(_dyingHashAnimation);
+
+        if (_isGameManagerNotNull)
+            gameManager.GameOver = true;
+
         UpdateHealthBar();
     }
 
     public void Hurt()
     {
         if (!_isHurtEffectsNotNull || hurtEffects.isPlaying) return;
-        
+
         hurtEffects.Play();
         UpdateHealthBar();
     }
@@ -60,8 +72,8 @@ public class CharacterLife : MonoBehaviour, IHealthEvents
 
     private void UpdateHealthBar()
     {
-        if(_isHealthBarNull) return;
-        
-        HealthBar.value = Health.GetCurrentLife().Value;
+        if (_isHealthBarNull) return;
+
+        healthBar.value = Health.GetCurrentLife().Value;
     }
 }
