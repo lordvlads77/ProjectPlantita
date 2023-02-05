@@ -113,7 +113,7 @@ public class GameManager : MonoBehaviour
 
             if(ItsWindy)
             {
-                if(windConditioner.asalvo && !GameOver)
+                if(!windConditioner.asalvo && !GameOver)
                 {
                     GameOver = false;
                     windConditioner.FlyPlayer();
