@@ -521,6 +521,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   initialLife: 10
   maxLife: 10
+  dyingAnimation: 
+  hurtEffects: {fileID: 2504214342218807202}
 --- !u!114 &1780867268
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -815,6 +817,36 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2504214343621411459, guid: 3ed0d324122d7b24eaec75c55c74aafc, type: 3}
   m_PrefabInstance: {fileID: 1570632994}
   m_PrefabAsset: {fileID: 0}
+--- !u!198 &2504214342218807202 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 2504214343621411456, guid: 3ed0d324122d7b24eaec75c55c74aafc, type: 3}
+  m_PrefabInstance: {fileID: 1570632994}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &6484188611610254160 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6484188613129301618, guid: 3ed0d324122d7b24eaec75c55c74aafc, type: 3}
+  m_PrefabInstance: {fileID: 1570632994}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &4289155129593475022
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6484188611610254160}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 1
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
 --- !u!1001 &5998023612543484664
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -40,8 +40,8 @@ namespace Traps
                 _nextActive = Time.time + hiddenTime;
             }
         }
-
-        private void OnTriggerEnter(Collider other)
+        
+        private void OnTriggerEnter2D(Collider2D other)
         {
             var life = other.GetComponent<CharacterLife>();
             

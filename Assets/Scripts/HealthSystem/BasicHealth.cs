@@ -22,9 +22,15 @@ namespace HealthSystem
         {
             CurrentLife.ChangeValue(CurrentLife.Value - damage.Value);
 
+            HurtEvent();
             DeathEvent();
 
             return CurrentLife;
+        }
+
+        private void HurtEvent()
+        {
+            _healthEvents.Hurt();
         }
 
         private void DeathEvent()
