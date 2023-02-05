@@ -16,23 +16,42 @@ namespace CMF
 
         public override float GetHorizontalMovementInput()
 		{
-			if(useRawInput)
-				return Input.GetAxisRaw(horizontalInputAxis);
+			if (!GameManager.Instance.GameOver && !GameManager.Instance.Winner)
+			{
+				if (useRawInput)
+					return Input.GetAxisRaw(horizontalInputAxis);
+				else
+					return Input.GetAxis(horizontalInputAxis);
+            }
 			else
-				return Input.GetAxis(horizontalInputAxis);
+			{
+				return 0;
+			}
+
 		}
 
 		public override float GetVerticalMovementInput()
 		{
-			if(useRawInput)
-				return Input.GetAxisRaw(verticalInputAxis);
-			else
-				return Input.GetAxis(verticalInputAxis);
+			if (!GameManager.Instance.GameOver && !GameManager.Instance.Winner)
+            {
+				if (useRawInput)
+					return Input.GetAxisRaw(verticalInputAxis);
+				else
+					return Input.GetAxis(verticalInputAxis);
+            }
+            else
+            {
+				return 0;
+            }
+				
 		}
 
 		public override bool IsJumpKeyPressed()
 		{
-			return Input.GetKey(jumpKey);
+			if (!GameManager.Instance.GameOver && !GameManager.Instance.Winner)
+				return Input.GetKey(jumpKey);
+			else
+				return false;
 		}
     }
 }

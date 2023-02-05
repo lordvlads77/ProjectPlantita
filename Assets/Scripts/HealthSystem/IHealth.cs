@@ -1,9 +1,11 @@
 public interface IHealth
 {
-    public LifePoint Damage(LifePoint damage);
+    public void Damage(LifePoint damage);
 
-    public LifePoint Heal(LifePoint heal);
+    public void Heal(LifePoint heal);
 
     public LifePoint GetCurrentLife();
+
+    public bool IsCure();
 }
 

@@ -31,8 +31,10 @@ public class GameManager : MonoBehaviour
     public AudioSource musicAudio;
     private void Start() {
         Application.targetFrameRate = 60;
-        
-        
+        VolumeProfile profile = globalVolume.sharedProfile;
+        if (profile.TryGet<Vignette>(out var vignette))
+            vignette.intensity.value = 0;
+
     }
     public static GameManager Instance 
     {

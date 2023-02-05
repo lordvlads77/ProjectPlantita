@@ -16,7 +16,7 @@ public class BlowAwayPlayer : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.O))
         {
-            FlyPlayer();
+            //FlyPlayer();
         }
         if(fliying)
             rb.rotation += Time.deltaTime * rotationSpeed;
@@ -27,6 +27,10 @@ public class BlowAwayPlayer : MonoBehaviour
         if(collision.transform.CompareTag("WindProtection"))
         {
             asalvo = true;
+        }
+        if (collision.transform.CompareTag("FallZone"))
+        {
+            FlyPlayer();
         }
     }
 
@@ -46,5 +50,11 @@ public class BlowAwayPlayer : MonoBehaviour
         col.enabled = false;
         rb.AddForce(new Vector2(-1,1) * 700);
         fliying = true;
+        Invoke(nameof(CallGameOver), 1);
+    }
+
+    void CallGameOver()
+    {
+        GameManager.Instance.GameOver = true;
     }
 }

@@ -34,7 +34,7 @@ namespace Platforms
         {
             var target = other.GetComponent<CharacterLife>();
             
-            if(target == null) return;
+            if(target == null || target.Health.IsCure()) return;
             
             _healingWater.Heal(target.Health, Time.time);
             var drainPower = (totalHeal - _healingWater.GetLeftHealPoints().Value);
