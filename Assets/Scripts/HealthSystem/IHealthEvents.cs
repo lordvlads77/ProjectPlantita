@@ -5,5 +5,7 @@ namespace HealthSystem
         public void Death();
 
         public void Hurt();
+
+        public void Healing();
     }
 }

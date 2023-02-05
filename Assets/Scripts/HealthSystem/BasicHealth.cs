@@ -16,16 +16,14 @@ namespace HealthSystem
 
         public LifePoint MaxLife { get; }
 
-        public LifePoint CurrentLife { get; private set; }
+        public LifePoint CurrentLife { get; }
 
-        public LifePoint Damage(LifePoint damage)
+        public void Damage(LifePoint damage)
         {
             CurrentLife.ChangeValue(CurrentLife.Value - damage.Value);
 
             HurtEvent();
             DeathEvent();
-
-            return CurrentLife;
         }
 
         private void HurtEvent()
@@ -40,18 +38,28 @@ namespace HealthSystem
             _healthEvents.Death();
         }
 
-        public LifePoint Heal(LifePoint heal)
+        public void Heal(LifePoint heal)
         {
             CurrentLife.ChangeValue(CurrentLife.Value + heal.Value);
 
             if (CurrentLife.Value >= MaxLife.Value) CurrentLife.ChangeValue(MaxLife.Value);
 
-            return CurrentLife;
+            HealEvent();
+        }
+
+        private void HealEvent()
+        {
+            _healthEvents.Healing();
         }
 
         public LifePoint GetCurrentLife()
         {
             return CurrentLife;
+        }
+
+        public bool IsCure()
+        {
+            return CurrentLife == MaxLife;
         }
     }
 }
