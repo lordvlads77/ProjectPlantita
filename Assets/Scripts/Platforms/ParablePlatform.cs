@@ -66,5 +66,29 @@ namespace Platforms
 
             return new Vector2(mid.x, f(t) + Mathf.Lerp(start.y, end.y, t));
         }
+        
+        private void OnCollisionEnter2D(Collision2D other)
+        {
+            if(other.gameObject.GetComponent<CharacterLife>() == null) return;
+            
+            AttachPlayer(other.transform);
+        }
+
+        private void OnCollisionExit2D(Collision2D other)
+        {
+            if(other.gameObject.GetComponent<CharacterLife>() == null) return;
+            
+            DetachPlayer(other.transform);
+        }
+
+        public void AttachPlayer(Transform player)
+        {
+            player.parent = transform;
+        }
+
+        public void DetachPlayer(Transform player)
+        {
+            player.parent = null;
+        }
     }
 }
