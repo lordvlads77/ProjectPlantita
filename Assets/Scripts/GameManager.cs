@@ -26,6 +26,9 @@ public class GameManager : MonoBehaviour
     public BlowAwayPlayer windConditioner;
     public Volume globalVolume;
     Coroutine cVignette;
+
+    public AudioSource playerAudio;
+    public AudioSource musicAudio;
     private void Start() {
         Application.targetFrameRate = 60;
         
