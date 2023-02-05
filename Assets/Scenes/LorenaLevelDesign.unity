@@ -2558,6 +2558,7 @@ GameObject:
   - component: {fileID: 756262546}
   - component: {fileID: 756262545}
   - component: {fileID: 756262544}
+  - component: {fileID: 756262547}
   m_Layer: 0
   m_Name: TileSet_barrera_0
   m_TagString: WindProtection
@@ -2575,7 +2576,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -1.1254172, y: 0.5345719}
@@ -2659,6 +2660,32 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &756262547
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 756262543}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0.5107777}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.74, y: 1.2}
+    newSize: {x: 0.74, y: 1.2}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.74, y: 2.2215552}
+  m_EdgeRadius: 0
 --- !u!1 &817933676
 GameObject:
   m_ObjectHideFlags: 0
@@ -2761,6 +2788,7 @@ GameObject:
   - component: {fileID: 841040278}
   - component: {fileID: 841040277}
   - component: {fileID: 841040276}
+  - component: {fileID: 841040279}
   m_Layer: 0
   m_Name: TileSet_barrera_0 (1)
   m_TagString: WindProtection
@@ -2778,7 +2806,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -1.1254172, y: 0.5345719}
@@ -2862,6 +2890,32 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &841040279
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 841040275}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0.49186063}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.74, y: 1.2}
+    newSize: {x: 0.74, y: 1.2}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.74, y: 2.183721}
+  m_EdgeRadius: 0
 --- !u!4 &898074448 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5696401811202596667, guid: 3a22cf52bfe96a7429e40058bd2a2f5d, type: 3}
@@ -2954,6 +3008,7 @@ GameObject:
   - component: {fileID: 1265775670}
   - component: {fileID: 1265775669}
   - component: {fileID: 1265775668}
+  - component: {fileID: 1265775671}
   m_Layer: 0
   m_Name: TileSet_barrera_0
   m_TagString: WindProtection
@@ -3054,6 +3109,32 @@ Transform:
   m_Father: {fileID: 193091934}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &1265775671
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1265775667}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.74, y: 1.2}
+    newSize: {x: 0.74, y: 1.2}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.74, y: 1.2}
+  m_EdgeRadius: 0
 --- !u!1 &1361985752
 GameObject:
   m_ObjectHideFlags: 0
@@ -3278,6 +3359,7 @@ GameObject:
   - component: {fileID: 1613997169}
   - component: {fileID: 1613997171}
   - component: {fileID: 1613997170}
+  - component: {fileID: 1613997172}
   m_Layer: 0
   m_Name: TileSet_barrera_0 (1)
   m_TagString: WindProtection
@@ -3378,6 +3460,32 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &1613997172
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1613997168}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.74, y: 1.2}
+    newSize: {x: 0.74, y: 1.2}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.74, y: 1.2}
+  m_EdgeRadius: 0
 --- !u!1 &1655935693
 GameObject:
   m_ObjectHideFlags: 0
