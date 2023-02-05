@@ -47,10 +47,10 @@ Material:
     - _WindSpeed: 0.94
     m_Colors:
     - _AstroColor: {r: 1011.95294, g: 1024, b: 0, a: 1}
-    - _HorizonColor: {r: 0, g: 0.5647059, b: 0.8117648, a: 1}
-    - _PosAstro: {r: 3.3584607, g: -1.8075764, b: -5, a: 0}
+    - _HorizonColor: {r: 0.48149294, g: 0.84282386, b: 1, a: 1}
+    - _PosAstro: {r: -0.48481154, g: 0.7658415, b: -5, a: 0}
     - _PosAstroMask: {r: -1, g: -1, b: 0, a: 0}
-    - _SkyColor: {r: 0, g: 0.019607842, b: 0.5294118, a: 1}
+    - _SkyColor: {r: 0.6559866, g: 0.68015087, b: 0.27944416, a: 1}
   m_BuildTextureStacks: []
 --- !u!114 &1293002269464858200
 MonoBehaviour:
