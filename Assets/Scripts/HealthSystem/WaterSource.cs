@@ -17,6 +17,7 @@ namespace Platforms
         private HealingWater _healingWater;
         private int _drainPowerID;
         private Material _skyMaterial;
+        private SpriteRenderer _sprite;
 
         private void Awake()
         {
@@ -24,6 +25,7 @@ namespace Platforms
             var healPoints = new LifePoint(totalHeal);
 
             _skyMaterial = GetComponent<Renderer>().material;
+            _sprite = GetComponent<SpriteRenderer>();
             _drainPowerID = Shader.PropertyToID("_DrainPower");
             _healingWater = new HealingWater(healing, healPoints, healingSpeed);
         }
@@ -38,6 +40,11 @@ namespace Platforms
             var drainPower = (totalHeal - _healingWater.GetLeftHealPoints().Value);
             
             _skyMaterial.SetFloat(_drainPowerID, drainPower);
+
+            if (_healingWater.GetLeftHealPoints().Value <= 0)
+            {
+                _sprite.color = Color.clear;
+            }
         }
     }
 }
