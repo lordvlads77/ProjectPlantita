@@ -71,12 +71,14 @@ public class SunController : MonoBehaviour
             {
                 print("Empieza a quemar");
                 GameManager.Instance.ItsSunny = true;
+                GameManager.Instance.EnableVignnete();
                 firstEventTriggered = true;
                 OnFirstFlag?.Invoke();
             }
             if (dayPercent >= secondDayEventTrigger && !secondEventTriggered)
             {
                 GameManager.Instance.ItsSunny = false;
+                GameManager.Instance.DisableVignnete();
                 print("Dejo de quemar");
                 secondEventTriggered = true;
                 OnSecondFlag?.Invoke();

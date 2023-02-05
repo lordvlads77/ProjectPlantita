@@ -1,6 +1,9 @@
 
 using UnityEngine;
+using System.Collections;
 using UnityEngine.Events;
+using UnityEngine.Rendering;
+using UnityEngine.Rendering.Universal;
 public class GameManager : MonoBehaviour
 {
     [SerializeField]private bool _itsWindy;
@@ -19,8 +22,12 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Transform sunRayOrigin;
 
     public BlowAwayPlayer windConditioner;
+    public Volume globalVolume;
+    Coroutine cVignette;
     private void Start() {
         Application.targetFrameRate = 60;
+        
+        
     }
     public static GameManager Instance 
     {
@@ -86,6 +93,44 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+
+    IEnumerator ModifyVignette(float endValue, bool increase)
+    {
+        VolumeProfile profile = globalVolume.sharedProfile;
+        float counter = 0;
+        if (profile.TryGet<Vignette>(out var vignette))
+        {
+            if(increase)
+            {
+                while(counter < endValue)
+                {
+                    counter += Time.deltaTime;
+                    vignette.intensity.value = counter;
+                    yield return null;
+                }
+            }
+            else
+            {
+                counter = vignette.intensity.value;
+                while (counter > endValue)
+                {
+                    counter -= Time.deltaTime;
+                    vignette.intensity.value = counter;
+                    yield return null;
+                }
+            }
+        }
+        cVignette = null;
+    }
+
+    public void EnableVignnete()
+    {
+        cVignette = StartCoroutine(ModifyVignette(0.55f, true));
+    }
+    public void DisableVignnete()
+    {
+        cVignette = StartCoroutine(ModifyVignette(0.0f, false));
     }
 
     // Update is called once per frame
