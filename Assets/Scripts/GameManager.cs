@@ -102,8 +102,6 @@ public class GameManager : MonoBehaviour
                     contador = 0;
                     RaycastHit2D hit = Physics2D.Linecast(sunRayOrigin.position, PlayerPos.position);
 
-                    Debug.DrawLine(sunRayOrigin.position, PlayerPos.position, Color.red);
-
                     if (hit.collider != null && hit.collider.transform.CompareTag("Player"))
                     {
                         playerLife.Health.Damage(new LifePoint(sunDamage));

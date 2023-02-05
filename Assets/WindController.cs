@@ -17,6 +17,11 @@ public class WindController : MonoBehaviour
     void Start()
     {
         _WindStrenghtID = Shader.PropertyToID("_WindStrength");
+        windParticles = GameObject.Find("WindController").GetComponent<ParticleSystem>();
+    }
+
+    void OnTriggerEnter2D(Collider2D col)
+    {
         cWindCicle = StartCoroutine(WindCicle());
     }
 
@@ -59,5 +64,6 @@ public class WindController : MonoBehaviour
         }
         
         cWindCicle = null;
+        Destroy(this.gameObject);
     }
 }

@@ -7,7 +7,7 @@ namespace CMF
 	//This controller script is based on 'AdvancedWalkerController' and limits player movement to a 2D plane;
 	//It can be used to build 2D platformers or other games using 2D controls;
 	public class SidescrollerController : AdvancedWalkerController {
-
+		public SpriteRenderer sr;
 		//Calculate movement direction based on player input;
 		protected override Vector3 CalculateMovementDirection()
 		{
@@ -29,7 +29,16 @@ namespace CMF
 				//Project movement direction so movement stays parallel to the ground;
 				_velocity += Vector3.ProjectOnPlane(cameraTransform.right, tr.up).normalized * characterInput.GetHorizontalMovementInput();
 			}
-
+			print("Velocity: " + _velocity);
+			if(sr != null)
+            {
+				if (_velocity.x < 0)
+					sr.flipX = true;
+				else if (_velocity.x > 0)
+					sr.flipX = false;
+				else
+					sr.flipX = sr.flipX;
+			}
 			return _velocity;
 		}
 	}
