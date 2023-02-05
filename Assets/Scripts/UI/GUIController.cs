@@ -70,4 +70,10 @@ public class GUIController : MonoBehaviour
         _LostPanel.SetActive(false);
         _credits.SetActive(true);   
     }
+
+    public void CargarEscena(string sceneName)
+    {
+        SceneManager.LoadScene(sceneName, LoadSceneMode.Single);
+    }
+    
 }
