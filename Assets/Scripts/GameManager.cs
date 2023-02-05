@@ -27,7 +27,7 @@ public class GameManager : MonoBehaviour
     public BlowAwayPlayer windConditioner;
     public Volume globalVolume;
     Coroutine cVignette;
-
+    public AudioClip sonidoMoricion;
     public AudioSource playerAudio;
     public AudioSource musicAudio;
     private void Start() {
@@ -69,6 +69,7 @@ public class GameManager : MonoBehaviour
             _gameOver = value;
             Cursor.visible = true;
             Cursor.lockState = CursorLockMode.None;
+            playerAudio.PlayOneShot(sonidoMoricion);
             OnGameOver?.Invoke();
         } 
     }
