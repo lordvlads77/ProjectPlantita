@@ -282,7 +282,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: a544743596ea84f43a834b9a619ce725, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -402,14 +402,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementSpeed: 10
-  airControlRate: 2
+  airControlRate: 5
   jumpSpeed: 15
   jumpDuration: 0.2
   airFriction: 0.5
-  groundFriction: 100
-  gravity: 30
+  groundFriction: 1000
+  gravity: 98.1
   slideGravity: 5
-  slopeLimit: 80
+  slopeLimit: 98.1
   useLocalMomentum: 1
   cameraTransform: {fileID: 4012291302952920}
 --- !u!114 &114378855920705764
@@ -660,7 +660,7 @@ MonoBehaviour:
   smoothDampTime: 0.04
   extrapolatePosition: 0
   updateType: 0
-  smoothType: 1
+  smoothType: 0
 --- !u!114 &114090585617294424
 MonoBehaviour:
   m_ObjectHideFlags: 0

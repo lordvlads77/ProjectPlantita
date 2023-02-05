@@ -102,7 +102,7 @@ namespace CMF
 			switch (smoothType)
 			{
 				case SmoothType.Lerp:
-					return Vector3.Lerp (_start, _target, Time.deltaTime * _smoothTime);
+					return Vector3.Lerp (_start, new Vector3(_target.x, transform.position.y, _target.z), Time.deltaTime * _smoothTime);
 				case SmoothType.SmoothDamp:
 					return Vector3.SmoothDamp (_start, _target, ref refVelocity, smoothDampTime);
 				default:
