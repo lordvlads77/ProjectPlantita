@@ -125,5 +125,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 1
-  hiddenTime: 2
-  activeTime: 2
+  hiddenTime: 0.25
+  activeTime: 0.5
