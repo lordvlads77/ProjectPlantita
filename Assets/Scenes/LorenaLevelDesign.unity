@@ -538,6 +538,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 55207892f7374bc428c69ce9f5d30ceb, type: 3}
+--- !u!114 &406957590 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9187296143419211402, guid: f0261b75c25866e4097eb621b425797e, type: 3}
+  m_PrefabInstance: {fileID: 432662701}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 534650644010f3e48bee3412143373dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &410284381
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4583,6 +4594,14 @@ PrefabInstance:
       propertyPath: HealthBar
       value: 
       objectReference: {fileID: 49397690}
+    - target: {fileID: 1780867267, guid: 598b6bc40260ea04b9652cd28338a36e, type: 3}
+      propertyPath: healthBar
+      value: 
+      objectReference: {fileID: 49397690}
+    - target: {fileID: 1780867267, guid: 598b6bc40260ea04b9652cd28338a36e, type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 406957590}
     - target: {fileID: 1780867268, guid: 598b6bc40260ea04b9652cd28338a36e, type: 3}
       propertyPath: _particles
       value: 
