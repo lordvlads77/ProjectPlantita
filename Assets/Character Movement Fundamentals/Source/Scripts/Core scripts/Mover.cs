@@ -7,7 +7,7 @@ namespace CMF
 	//It expects a movement velocity (via 'SetVelocity') every 'FixedUpdate' frame from an external script (like a controller script) to work;
 	//It also provides several getter methods for important information (whether the mover is grounded, the current surface normal [...]);
 	public class Mover : MonoBehaviour {
-
+		public Animator anim;
 		//Collider variables;
 		[Header("Mover Options :")]
 		[Range(0f, 1f)][SerializeField] float stepHeightRatio = 0.25f;
@@ -106,6 +106,9 @@ namespace CMF
 		{
 			if(isInDebugMode)
 				sensor.DrawDebug();
+			anim.SetBool("grounded", isGrounded);
+			if(Input.GetKeyDown(KeyCode.Space))
+				anim.SetTrigger("jump");
 		}
 
 		//Recalculate collider height/width/thickness;

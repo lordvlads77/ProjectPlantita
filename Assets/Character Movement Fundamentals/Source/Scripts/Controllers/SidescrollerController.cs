@@ -8,6 +8,7 @@ namespace CMF
 	//It can be used to build 2D platformers or other games using 2D controls;
 	public class SidescrollerController : AdvancedWalkerController {
 		public SpriteRenderer sr;
+		public Animator anim;
 		//Calculate movement direction based on player input;
 		protected override Vector3 CalculateMovementDirection()
 		{
@@ -38,7 +39,12 @@ namespace CMF
 					sr.flipX = false;
 				else
 					sr.flipX = sr.flipX;
+				if( _velocity.x != 0)
+					anim.SetBool("moving",true);
+				else
+					anim.SetBool("moving", false);
 			}
+
 			return _velocity;
 		}
 	}
