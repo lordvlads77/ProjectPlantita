@@ -30,7 +30,6 @@ namespace CMF
 				//Project movement direction so movement stays parallel to the ground;
 				_velocity += Vector3.ProjectOnPlane(cameraTransform.right, tr.up).normalized * characterInput.GetHorizontalMovementInput();
 			}
-			print("Velocity: " + _velocity);
 			if(sr != null)
             {
 				if (_velocity.x < 0)

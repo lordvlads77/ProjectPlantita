@@ -30,7 +30,11 @@ public class BlowAwayPlayer : MonoBehaviour
         }
         if (collision.transform.CompareTag("FallZone"))
         {
-            FlyPlayer();
+            BumpPlayer(); 
+        }
+        if (collision.transform.CompareTag("VictoryZone"))
+        {
+            GameManager.Instance.Winner = true;
         }
     }
 
@@ -40,6 +44,17 @@ public class BlowAwayPlayer : MonoBehaviour
         {
             asalvo = false;
         }
+    }
+
+    public void BumpPlayer()
+    {
+        _camara.transform.parent = null;
+        _sc.enabled = false;
+        _mover.enabled = false;
+        col.enabled = false;
+        rb.AddForce(new Vector2(Random.Range(-1,1), 1) * 1000);
+        fliying = true;
+        Invoke(nameof(CallGameOver), 1);
     }
 
     public void FlyPlayer()

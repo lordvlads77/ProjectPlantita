@@ -57,7 +57,8 @@ public class GameManager : MonoBehaviour
         set {
             _winner = value;
             Cursor.visible = true;
-            Cursor.lockState = CursorLockMode.None;
+            
+            //Cursor.lockState = CursorLockMode.None;
             OnWin?.Invoke();
         } 
     }
@@ -68,7 +69,7 @@ public class GameManager : MonoBehaviour
         {
             _gameOver = value;
             Cursor.visible = true;
-            Cursor.lockState = CursorLockMode.None;
+            //Cursor.lockState = CursorLockMode.None;
             playerAudio.PlayOneShot(sonidoMoricion);
             OnGameOver?.Invoke();
         } 

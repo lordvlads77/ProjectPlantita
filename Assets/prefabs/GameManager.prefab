@@ -397,7 +397,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 777146487}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 9187296143419211402}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: CargarEscena
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: MainMenu
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &975013631
 GameObject:
   m_ObjectHideFlags: 0
@@ -590,7 +602,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 1062926494}
   m_OnClick:
     m_PersistentCalls:
@@ -985,7 +997,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1380964230}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 9187296143419211402}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: CargarEscena
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: MainMenu
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1491375290
 GameObject:
   m_ObjectHideFlags: 0
@@ -1106,7 +1130,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1491375293}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 9187296143419211402}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: CargarEscena
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: LorenaLevelDesign
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1610337601
 GameObject:
   m_ObjectHideFlags: 0
@@ -1397,7 +1433,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2034376345}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 9187296143419211402}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: CargarEscena
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: LorenaLevelDesign
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2079591745
 GameObject:
   m_ObjectHideFlags: 0
@@ -1804,6 +1852,7 @@ MonoBehaviour:
   reloj: {fileID: 1610337603}
   windConditioner: {fileID: 0}
   globalVolume: {fileID: 7912603}
+  sonidoMoricion: {fileID: 0}
   playerAudio: {fileID: 1773204236}
   musicAudio: {fileID: 1773204235}
 --- !u!82 &1773204235
