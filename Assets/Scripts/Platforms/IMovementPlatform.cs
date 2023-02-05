@@ -8,6 +8,6 @@ namespace Platforms
 
         public void AttachPlayer(Transform player);
 
-        public void DetachPlayer(Transform player);
+        public void DetachPlayer();
     }
 }

@@ -1,4 +1,5 @@
 using System;
+using CMF;
 using UnityEngine;
 using UnityEngine.Serialization;
 
@@ -28,7 +29,9 @@ namespace Platforms
         private float _maxUpOffset;
         private float _maxDownOffset;
         private float _startMoving = 0;
-        
+        private Transform _player;
+        private SidescrollerController _character;
+
         private void Awake()
         {
             _initialPosition = transform.position;
@@ -67,29 +70,39 @@ namespace Platforms
             
             transform.Translate( direction * (speed * Time.deltaTime));
         }
-
         private void OnCollisionEnter2D(Collision2D other)
         {
-            if(other.gameObject.GetComponent<CharacterLife>() == null) return;
+            if (other.gameObject.GetComponent<CharacterLife>() == null ||
+                other.gameObject.GetComponent<CharacterKeyboardInput>().IsJumpKeyPressed() && 
+                other.gameObject.GetComponent<CharacterController>().isGround) return;
             
             AttachPlayer(other.transform);
         }
 
         private void OnCollisionExit2D(Collision2D other)
         {
-            if(other.gameObject.GetComponent<CharacterLife>() == null) return;
+            if(other.gameObject.GetComponent<CharacterLife>().GetInstanceID() != _player.GetInstanceID()) return;
             
-            DetachPlayer(other.transform);
+            DetachPlayer();
         }
 
         public void AttachPlayer(Transform player)
         {
-            player.parent = transform;
+            player.transform.parent = transform;
+            _player = player;
+
+            _character = player.GetComponent<SidescrollerController>();
+            _character.OnJump += _ => { DetachPlayer(); };
         }
 
-        public void DetachPlayer(Transform player)
+        public void DetachPlayer()
         {
-            player.parent = null;
+            if(_player == null) return;
+            
+            _player.transform.parent = null;
+            _player = null;
+            _character.OnJump -= _ => { DetachPlayer(); };
+            _character = null;
         }
 
         private bool CanMove(float gameTime)
